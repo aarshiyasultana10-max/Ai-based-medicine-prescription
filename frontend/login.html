@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI Medicine Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-bg">
+  <div class="login-card">
+    <h1>💊 AI Medicine Chatbot</h1>
+    <form id="loginForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+      <button type="submit">Continue ➡️</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const user = {
+        name: document.getElementById("name").value,
+        address: document.getElementById("address").value,
+        phone: document.getElementById("phone").value
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+      window.location.href = "chat.html";
+    });
+  </script>
+</body>
+</html>

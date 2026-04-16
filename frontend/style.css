@@ -1,0 +1,326 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e6f7ff;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== LOGIN PAGE ===== */
+.login-bg {
+  background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  text-align: center;
+  width: 360px;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.login-card h1 {
+  color: #0288d1;
+  margin-bottom: 1.5rem;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border-radius: 10px;
+  border: 1px solid #90caf9;
+  font-size: 15px;
+}
+
+.login-card button {
+  width: 100%;
+  background: #0288d1;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background: #0277bd;
+}
+
+/* ===== CHAT PAGE ===== */
+.symptom-bg {
+  background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-stethoscope_23-2149611243.jpg') no-repeat center/cover;
+  opacity: 0.15;
+}
+
+.chat-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #0288d1;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background: #fff;
+  color: #0288d1;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #0277bd;
+  color: white;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.user-message, .bot-message {
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background: #c8e6c9;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot-message {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #90caf9;
+}
+
+.chat-input {
+  display: flex;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #bbb;
+  outline: none;
+}
+
+.chat-input button {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  margin-left: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  background: #0277bd;
+}
+
+/* ===== ORDER PAGE ===== */
+.order-bg {
+  background: linear-gradient(135deg, #b3e5fc, #4fc3f7);
+}
+
+.order-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.order-container h2 {
+  color: #0288d1;
+  margin-bottom: 1.5rem;
+}
+
+#order-details p {
+  margin: 0.4rem 0;
+  font-size: 15px;
+  color: #333;
+}
+
+#order-details h3 {
+  margin-top: 1rem;
+  color: #0288d1;
+}
+
+#confirmOrder {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+#confirmOrder:hover {
+  background: #0277bd;
+}
+
+/* ===== CONFIRMATION PAGE ===== */
+.confirm-bg {
+  background: linear-gradient(135deg, #81d4fa, #4fc3f7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.confirm-card h2 {
+  color: #0288d1;
+  margin: 1rem 0;
+}
+
+.tick-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+}
+
+.confirm-card p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 0.8rem;
+}
+
+.confirm-card button {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+}
+
+.confirm-card button:hover {
+  background: #0277bd;
+}
+
+/* ===== HISTORY PAGE ===== */
+.history-body {
+  background: linear-gradient(135deg, #81d4fa, #4fc3f7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.history-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.history-container h1 {
+  color: #0288d1;
+  margin-bottom: 1rem;
+}
+
+.order-card {
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.order-card h3 {
+  color: #0d47a1;
+  margin-bottom: 5px;
+}
+
+.history-container button {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.history-container button:hover {
+  background: #0277bd;
+}

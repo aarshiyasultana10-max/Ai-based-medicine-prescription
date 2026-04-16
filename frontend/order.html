@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary | AI Medicine Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="order-bg">
+  <div class="order-container">
+    <h2>🧾 Order Summary</h2>
+    <div id="order-details"></div>
+    <button id="confirmOrder">Confirm Order ✅</button>
+  </div>
+
+  <script>
+    const order = JSON.parse(localStorage.getItem('orderInfo'));
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    // Redirect to login if info missing
+    if (!order || !user) {
+      window.location.href = 'login.html';
+    }
+
+    // Display order summary
+    document.getElementById('order-details').innerHTML = `
+      <p><strong>Symptom:</strong> ${order.Symptoms}</p>
+      <p><strong>Disease:</strong> ${order.Disease}</p>
+      <p><strong>Age Group:</strong> ${order.AgeGroup}</p>
+      <p><strong>Medicine:</strong> ${order.Medicine}</p>
+      <p><strong>Dosage:</strong> ${order.Dosage}</p>
+      <p><strong>Precaution:</strong> ${order.Precaution}</p>
+      <p><strong>Quantity:</strong> ${order.quantity}</p>
+      <hr>
+      <h3>Delivery Details</h3>
+      <p><strong>Name:</strong> ${user.name}</p>
+      <p><strong>Address:</strong> ${user.address}</p>
+      <p><strong>Phone:</strong> ${user.phone}</p>
+    `;
+
+    // Save to order history and redirect
+    document.getElementById('confirmOrder').addEventListener('click', () => {
+      const history = JSON.parse(localStorage.getItem('orderHistory')) || [];
+      history.push({
+        Disease: order.Disease,
+        Symptom: order.Symptoms,
+        AgeGroup: order.AgeGroup,
+        Medicine: order.Medicine,
+        Quantity: order.quantity,
+        Status: "Confirmed ✅",
+        Date: new Date().toLocaleString()
+      });
+      localStorage.setItem('orderHistory', JSON.stringify(history));
+      window.location.href = 'confirm.html';
+    });
+  </script>
+</body>
+</html>

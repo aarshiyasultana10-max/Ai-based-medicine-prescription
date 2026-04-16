@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Medicine Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="symptom-bg">
+  <div class="overlay"></div>
+
+  <div class="chat-wrapper">
+    <header class="chat-header">
+      <h1>💊 AI Medicine Assistant</h1>
+      <button id="logout" class="logout-btn">Logout</button>
+    </header>
+
+    <main id="chat-box" class="chat-box">
+      <div class="bot-message">👋 Hi! I’m your AI Health Assistant.<br>Describe your symptoms, and I’ll suggest suitable medicines.</div>
+    </main>
+
+    <form id="chat-form" class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your symptoms..." required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- ✅ Load XLSX for reading Excel dataset -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📜 Order History | AI Medicine Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="history-body">
+  <div class="history-container">
+    
+    <!-- ✅ Buttons moved to the top -->
+    <div class="top-buttons" style="text-align: right; margin-bottom: 10px;">
+      <button onclick="window.location.href='chat.html'">🔄 Back to Chatbot</button>
+      <button onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <h1>📦 Your Order History</h1>
+    <div id="order-list"></div>
+
+  </div>
+
+  <script>
+    // Load order history
+    const orders = JSON.parse(localStorage.getItem("orderHistory")) || [];
+    const list = document.getElementById("order-list");
+
+    if (orders.length === 0) {
+      list.innerHTML = "<p>No past orders found.</p>";
+    } else {
+      list.innerHTML = orders.map((o, i) => `
+        <div class="order-card">
+          <h3>🩺 Order #${i + 1}</h3>
+          <p><b>Symptom:</b> ${o.Symptom || 'N/A'}</p>
+          <p><b>Disease:</b> ${o.Disease}</p>
+          <p><b>Age Group:</b> ${o.AgeGroup}</p>
+          <p><b>Medicine:</b> ${o.Medicine}</p>
+          <p><b>Quantity:</b> ${o.Quantity}</p>
+          <p><b>Status:</b> ${o.Status}</p>
+          <p><b>Date:</b> ${o.Date}</p>
+        </div>
+      `).join("");
+    }
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
